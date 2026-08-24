@@ -1,0 +1,103 @@
+import { OperationsMetrics, RepairCrew, WorkOrder } from '../types/operation';
+
+export const mockRepairCrews: RepairCrew[] = [
+  {
+    id: 'crew-01',
+    name: 'Rapid Response Asphalt Unit Alpha',
+    supervisor: 'Captain Marcus Vance',
+    contactNumber: '+1-555-8821',
+    equipmentType: 'Infrared Asphalt Recycler & Roller Truck',
+    currentStatus: 'deployed',
+    assignedZone: 'North Metro District',
+  },
+  {
+    id: 'crew-02',
+    name: 'Heavy Patch Crew Bravo',
+    supervisor: 'Chief Elena Rostova',
+    contactNumber: '+1-555-8822',
+    equipmentType: 'Milling Machine, Paver & Dump Hauler',
+    currentStatus: 'available',
+    assignedZone: 'East Tech Corridor',
+  },
+  {
+    id: 'crew-03',
+    name: 'Drainage & Utility Fix Squad Charlie',
+    supervisor: 'Tariq Al-Mansoor',
+    contactNumber: '+1-555-8823',
+    equipmentType: 'Excavator & Grating Maintenance Rig',
+    currentStatus: 'deployed',
+    assignedZone: 'Old Historic Central',
+  },
+];
+
+export const mockWorkOrders: WorkOrder[] = [
+  {
+    id: 'wo-104',
+    workOrderNumber: 'WO-2026-0104',
+    title: 'Emergency Pothole Patching - Metro Corridor',
+    description: 'Repair 2 severe potholes and seal cracks on Metro Corridor northbound lanes.',
+    priority: 'emergency',
+    status: 'on_site',
+    location: {
+      address: '424 Metro Corridor, Near Central Terminal',
+      constituencyName: 'North Metro District',
+      coordinates: { lat: 12.9716, lng: 77.5946 },
+    },
+    assignedCrewId: 'crew-01',
+    assignedCrewName: 'Rapid Response Asphalt Unit Alpha',
+    estimatedHours: 3.5,
+    materialEstimatedTons: 1.8,
+    scheduledDate: '2026-08-24T07:00:00Z',
+    linkedPotholeIds: ['pot-001'],
+    linkedReportIds: ['rep-8801'],
+  },
+  {
+    id: 'wo-102',
+    workOrderNumber: 'WO-2026-0102',
+    title: 'Routine Surface Milling & Paving - Heritage Ave',
+    description: 'Patch secondary pothole cluster and resurface 120m stretch.',
+    priority: 'high',
+    status: 'in_transit',
+    location: {
+      address: '77 Heritage Avenue, Old Town Center',
+      constituencyName: 'Old Historic Central',
+      coordinates: { lat: 12.9611, lng: 77.5684 },
+    },
+    assignedCrewId: 'crew-03',
+    assignedCrewName: 'Drainage & Utility Fix Squad Charlie',
+    estimatedHours: 6.0,
+    materialEstimatedTons: 4.2,
+    scheduledDate: '2026-08-24T09:00:00Z',
+    linkedPotholeIds: ['pot-003'],
+    linkedReportIds: ['rep-8803'],
+  },
+  {
+    id: 'wo-098',
+    workOrderNumber: 'WO-2026-0098',
+    title: 'Completed Resurfacing - South Bay Suburbs',
+    description: 'Filled 4 shallow potholes and re-applied thermal striping.',
+    priority: 'routine',
+    status: 'completed',
+    location: {
+      address: 'South Boulevard, Crossroad 9',
+      constituencyName: 'South Bay Suburbs',
+      coordinates: { lat: 12.9189, lng: 77.5841 },
+    },
+    assignedCrewId: 'crew-02',
+    assignedCrewName: 'Heavy Patch Crew Bravo',
+    estimatedHours: 4.0,
+    materialEstimatedTons: 2.5,
+    scheduledDate: '2026-08-23T10:00:00Z',
+    completedDate: '2026-08-23T15:30:00Z',
+    linkedPotholeIds: ['pot-004'],
+    linkedReportIds: [],
+  },
+];
+
+export const mockOperationsMetrics: OperationsMetrics = {
+  activeCrews: 6,
+  openWorkOrders: 18,
+  repairsCompletedToday: 7,
+  averageResponseTimeHours: 4.2,
+  materialsUsedTons: 14.8,
+};

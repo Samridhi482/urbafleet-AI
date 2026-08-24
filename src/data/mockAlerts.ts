@@ -1,0 +1,58 @@
+import { SystemAlert } from '../types/alert';
+
+export const mockAlerts: SystemAlert[] = [
+  {
+    id: 'alt-001',
+    code: 'ALT-CRIT-992',
+    title: 'Severe Pothole Cluster Detected on Inbound Corridor',
+    message: 'Telematics & AI patrol detected 4 severe potholes forming rapidly due to overnight monsoon runoff.',
+    severity: 'critical',
+    category: 'pothole_cluster',
+    timestamp: '2026-08-24T08:15:00Z',
+    isRead: false,
+    isAcknowledged: false,
+    targetLocation: {
+      name: 'North Metro Highway Inbound',
+      constituency: 'North Metro District',
+      coordinates: { lat: 12.9716, lng: 77.5946 },
+    },
+    recommendedAction: 'Dispatch Rapid Response Crew #2 for instant cold-mix asphalt patch.',
+    relatedEntityId: 'pot-001',
+  },
+  {
+    id: 'alt-002',
+    code: 'ALT-WARN-401',
+    title: 'Traffic Congestion Spillover - Tech Expressway',
+    message: 'Average transit speeds dropped below 15 km/h on Tech Boulevard. Spillover into feeder roads observed.',
+    severity: 'warning',
+    category: 'traffic_gridlock',
+    timestamp: '2026-08-24T07:45:00Z',
+    isRead: false,
+    isAcknowledged: true,
+    acknowledgedBy: 'Ops Controller #4',
+    targetLocation: {
+      name: 'Outer Ring Expressway Junction 14B',
+      constituency: 'East Tech Corridor',
+      coordinates: { lat: 12.9352, lng: 77.6245 },
+    },
+    recommendedAction: 'Adjust signal timing on corridor controllers and broadcast safe alternate route.',
+  },
+  {
+    id: 'alt-003',
+    code: 'ALT-INFO-102',
+    title: 'Citizen Report Surge in Old Historic Central',
+    message: 'Over 15 citizen reports logged in the past 3 hours regarding road surface cracks.',
+    severity: 'info',
+    category: 'citizen_surge',
+    timestamp: '2026-08-24T06:30:00Z',
+    isRead: true,
+    isAcknowledged: true,
+    acknowledgedBy: 'Supervisor Jennings',
+    targetLocation: {
+      name: 'Old Historic Central Sector 3',
+      constituency: 'Old Historic Central',
+      coordinates: { lat: 12.9611, lng: 77.5684 },
+    },
+    recommendedAction: 'Review batch triage queue for Ward 21.',
+  },
+];
